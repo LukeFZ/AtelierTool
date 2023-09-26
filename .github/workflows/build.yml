@@ -1,0 +1,28 @@
+name: .NET
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: 7.0.x
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build
+      run: dotnet publish --configuration Release --no-restore
+    - name: Upload Artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: AtelierTool
+        path: AtelierTool/bin/Release/net7.0/publish
