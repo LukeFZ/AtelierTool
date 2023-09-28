@@ -175,7 +175,7 @@ public class Downloader : IDisposable
 
             await using var decStream = bundle.Compression != 3 
                 ? new MemoryStream(bundleData) 
-                : Crypto.DecryptBundle(bundleData, bundle);
+                : BundleCrypto.DecryptBundle(bundleData, bundle);
 
             _semaphore.Release();
 

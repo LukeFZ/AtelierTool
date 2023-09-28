@@ -6,7 +6,7 @@ using System.Text;
 
 namespace AtelierTool;
 
-public static class Crypto
+public static class BundleCrypto
 {
     public static Stream DecryptBundle(byte[] bundleData, Bundle bundle)
     {
