@@ -14,21 +14,20 @@ app.Configure(config =>
 
     config.AddCommand<BundleDownloadCommand>("download-bundles")
         .WithDescription("Downloads and decrypts the game bundles.")
-        .WithExample("bundle", "download")
-        .WithExample("bundle", "download", "1695186894_yFRlDhTt4xOHNPdw");
+        .WithExample("download-bundles")
+        .WithExample("download-bundles", "1695186894_yFRlDhTt4xOHNPdw");
 
     config.AddCommand<BundleDecryptCommand>("decrypt-bundles")
-        .WithDescription("Decrypts local bundles given a catalog and the encrypted bundles.")
-        .WithExample("bundle", "decrypt", "bundles/catalog.json", "bundles");
+        .WithDescription("Decrypts local bundles given a catalog and the encrypted bundles.");
 
     config.AddCommand<MasterDataDownloadCommand>("download-masterdata")
         .WithDescription("Downloads and decrypts the game master data.")
-        .WithExample("masterdata", "download")
-        .WithExample("masterdata", "download", "1695388425_lqWykRBBn0E2ATNR");
+        .WithExample("download-masterdata")
+        .WithExample("download-masterdata", "1695388425_lqWykRBBn0E2ATNR");
 
     config.AddCommand<MasterDataDecryptCommand>("decrypt-masterdata")
         .WithDescription("Decrypts a local master data given the version and encrypted file.")
-        .WithExample("masterdata", "decrypt", "encrypted.masterdata", "1695388425_lqWykRBBn0E2ATNR");
+        .WithExample("decrypt-masterdata", "encrypted.masterdata", "1695388425_lqWykRBBn0E2ATNR");
 
     config.AddCommand<MasterDataExtractCommand>("extract-masterdata")
         .WithDescription("Extracts a local master data into seperate JSON files.");
